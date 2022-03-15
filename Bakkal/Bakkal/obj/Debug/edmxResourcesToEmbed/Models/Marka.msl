@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BakkalDbModelStoreContainer" CdmEntityContainer="BakkalDbEntities">
+    <EntitySetMapping Name="marka">
+      <EntityTypeMapping TypeName="BakkalDbModel.marka">
+        <MappingFragment StoreEntitySet="marka">
+          <ScalarProperty Name="marka_id" ColumnName="marka_id" />
+          <ScalarProperty Name="m_adi" ColumnName="m_adi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BakkalDbModelKullaniciStoreContainer" CdmEntityContainer="BakkalDbEntities1">
+    <EntitySetMapping Name="kullanici">
+      <EntityTypeMapping TypeName="BakkalDbModelKullanici.kullanici">
+        <MappingFragment StoreEntitySet="kullanici">
+          <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+          <ScalarProperty Name="k_kullaniciadi" ColumnName="k_kullaniciadi" />
+          <ScalarProperty Name="k_parola" ColumnName="k_parola" />
+          <ScalarProperty Name="k_adi" ColumnName="k_adi" />
+          <ScalarProperty Name="k_soyadi" ColumnName="k_soyadi" />
+          <ScalarProperty Name="k_eposta" ColumnName="k_eposta" />
+          <ScalarProperty Name="k_telefon" ColumnName="k_telefon" />
+          <ScalarProperty Name="k_durum" ColumnName="k_durum" />
+          <ScalarProperty Name="rol_id" ColumnName="rol_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

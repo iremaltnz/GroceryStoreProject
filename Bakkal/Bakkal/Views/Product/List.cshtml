@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+            <div   style="margin-top:50px ; margin-left:50px">
+                <div>
+                    <h2>Ürünler</h2>
+                    <br />
+
+
+                    <button type="button" class="btn btn-success"> <a href="/Product/Add" style="text-decoration: none; color: white">Yeni Bir Ürün Ekle</a> </button>
+                    <hr />
+                </div>
+            <table class="table">
+            <thead>
+                <tr>
+                    <td>Ürün Id</td>
+                    <td>Ürün Adı</td>
+                    <td>Ürün Barkodu</td>
+                    <td>Üretim Traihi</td>
+                    <td>Tüketim Tarihi</td>
+                    <td>Fiyat</td>
+                    <td>Ağırlık</td>
+
+                    <td>Renk</td>
+                    <td>Marka Id</td>
+                    <td>Kategori Id</td>
+                    <td>Stok Id</td>
+
+                </tr>
+            </thead>
+            <tbody>
+            @{ foreach (System.Data.DataRow table in ViewBag.table.Rows)
+                {
+                            <tr>
+                                <th>   <a style="margin-right:50px">  @table["urun_id"]</a> </th>
+                                <th>      @table["u_adi"]</th>
+                                <th>   @table["u_barkodu"] </th>
+                                <th>      @table["u_uretim_tarihi"]</th>
+                                <th>    @table["u_tuketim_tarihi"] </th>
+                                <th>      @table["u_fiyat"]</th>
+                                <th>    @table["u_agirlik"] </th>
+                                <th>      @table["u_rengi"]</th>
+                                <th>      @table["marka_id"]</th>
+                                <th>    @table["kategori_id"] </th>
+                                <th>      @table["stok_id"]</th>
+
+
+                                <th><button type="button" class="btn btn-danger"> <a style="text-decoration: none; color: white"> @Html.ActionLink("Delete", "Delete", new { id = @table["urun_id"] })</a>  </button>  </th>
+                                <th> <button type="button" class="btn btn-warning"> <a style="text-decoration: none; color: white"> @Html.ActionLink("Update", "Update", new { @id = @table["urun_id"] }) </a> </button>     </th>
+                            </tr>
+
+                }
+            }
+            </tbody>
+            </table>
+            </div>
+
+
+
+ 

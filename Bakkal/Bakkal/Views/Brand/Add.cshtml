@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <div >
+        <h1>Marka Ekle</h1>
+        <form action="/Brand/Add" method="post">
+          
+            <h3>
+                Marka Adı Girin
+
+            </h3>
+            <label>
+                <span>Marka Adı :</span>
+                <input type="text" name="m_name" placeholder="Marka adı girin.." style="margin-top:50px" />
+
+
+
+                <div class="button">
+                    <input type="submit" value="Add" style="margin-top:50px ; margin-left:10px">
+                </div>
+
+            
+</form>
+    </div>
+
+
+

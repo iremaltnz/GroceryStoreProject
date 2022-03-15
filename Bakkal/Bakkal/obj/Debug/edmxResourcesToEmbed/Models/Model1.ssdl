@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BakkalDbModelKullanici.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="kullanici">
+    <Key>
+      <PropertyRef Name="kullanici_id" />
+    </Key>
+    <Property Name="kullanici_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="k_kullaniciadi" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="k_parola" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="k_adi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="k_soyadi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="k_eposta" Type="nvarchar" MaxLength="255" />
+    <Property Name="k_telefon" Type="nvarchar" MaxLength="50" />
+    <Property Name="k_durum" Type="bit" Nullable="false" />
+    <Property Name="rol_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="BakkalDbModelKullaniciStoreContainer">
+    <EntitySet Name="kullanici" EntityType="Self.kullanici" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

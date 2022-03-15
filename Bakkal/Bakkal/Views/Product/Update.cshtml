@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Update</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Kategori</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        @foreach (System.Data.DataRow DR in ViewBag.emprecord.Rows)
+        {
+    <form action="/Product/Update" method="post">
+
+        <h3>
+            Ürün Bilgilerini Girin
+
+        </h3>
+
+        <label>
+            <span>Ürün Adı :</span>
+            <input type="text" name="name" placeholder="Ürün adı girin.." style="margin-top:50px" value="@DR["u_adi"]"/>
+        </label>
+        <label>
+            <span>Ürün Barkodu :</span>
+            <input type="text" name="barcode" style="margin-top:50px" value="@DR["u_barkodu"]"/>
+        </label>
+
+        <label>
+            <span>Üretim Tarihi:</span>
+            <input type="date" name="prod_date" placeholder="" style="margin-top:50px" value="@DR["u_uretim_tarihi"]"/>
+        </label>
+        <label>
+            <span>Tüketim Tarihi :</span>
+            <input type="date" name="cons_date" placeholder="" style="margin-top:50px" value="@DR["u_tuketim_tarihi"]" />
+
+        </label>
+
+
+        <label>
+            <span>Fiyat:</span>
+            <input type="number" name="price" style="margin-top:50px" value="@DR["u_fiyat"]" />
+        </label>
+
+        <label>
+            <span>Ağırlık :</span>
+            <input type="number" name="weight" style="margin-top:50px" value="@DR["u_agirlik"]" />
+        </label>
+
+        <label>
+            <span>Renk :</span>
+            <input type="text" name="color" style="margin-top:50px" value="@DR["u_rengi"]"/>
+        </label>
+
+
+        <label>
+            <span>Stok Id :</span>
+            <input type="number" name="stock_id" style="margin-top:50px" value="@DR["stok_id"]"/>
+        </label>
+
+
+        <label>
+            <span>Marka Id :</span>
+            <input type="number" name="brand_id" style="margin-top:50px" value="@DR["marka_id"]"  />
+        </label>
+
+
+        <label>
+            <span>Kategori Id :</span>
+            <input type="number" name="c_id" style="margin-top:50px" value="@DR["kategori_id"]" />
+        </label>
+
+      
+
+
+    </form>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Update" class="btn btn-default" />
+                </div>
+
+            </div>
+        }
+
+
+    </div>
+}

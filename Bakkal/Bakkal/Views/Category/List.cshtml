@@ -1,0 +1,43 @@
+﻿
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+            <div   style="margin-top:50px ; margin-left:50px">
+                <div>
+                    <h2>Kategoriler</h2>
+                    <br />
+                   
+
+                    <button type="button" class="btn btn-success"> <a href="/Category/Add" style="text-decoration: none; color: white">Yeni Bir Kategori Ekle</a> </button>
+                    <hr />
+                </div>
+            <table class="table">
+            <thead>
+            <tr>
+            <td >Kategori Id</td>
+            <td>Kategori Adı</td>
+            <td>İşlemler</td>
+
+            </tr>
+            </thead>
+            <tbody>
+            @{ foreach (System.Data.DataRow table in ViewBag.table.Rows)
+                {
+                    <tr>
+                    <th >   <a style="margin-right:50px">  @table["kategori_id"]</a> </th>
+                    <th>      @table["k_adi"]</th>
+
+                    <th><button type="button" class="btn btn-danger"> <a style="text-decoration: none; color: white"> @Html.ActionLink("Delete", "Delete", new { id = @table["kategori_id"] })</a>  </button>  </th>
+                    <th> <button type="button" class="btn btn-warning"> <a style="text-decoration: none; color: white"> @Html.ActionLink("Update", "Update", new { @id = @table["kategori_id"] }) </a> </button>     </th>
+                    </tr>
+
+                }
+            }
+            </tbody>
+            </table>
+            </div>

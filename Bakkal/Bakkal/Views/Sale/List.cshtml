@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+            <div style="margin-top:50px ; margin-left:50px">
+                <div>
+             
+                    <button type="button" class="btn btn-success"> <a href="/Sale/Add" style="text-decoration: none; color: white">Yeni Bir Satis Ekle</a> </button>
+                    <hr />
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td>Satis Id</td>
+                            <td>Tarih
+
+                            <td>Durum</td>
+                            <td>Kullanıcı Id</td>
+                            <td>Miktar</td>
+                            <td> Fiyat</td>
+
+                            <td>İskonto</td>
+                            <td>Ürün Id</td>
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                     
+                        @{ foreach (System.Data.DataRow table in ViewBag.table.Rows)
+                            {
+                                                <tr>
+                                                    <th>   <a style="margin-right:50px">  @table["satis_id"]</a> </th>
+                                                    <th>      @table["s_tarih"]</th>
+                                                    <th>      @table["s_durum"]</th>
+                                                    <th>      @table["kullanici_id"]</th>
+                                                    <th>      @table["si_miktar"]</th>
+                                                    <th>      @table["si_fiyat"]</th>
+                                                    <th>      @table["si_iskonto"]</th>
+                                                    <th>      @table["urun_id"]</th>
+
+                                                    <!--Butonlara tıklayınca üzerindeki işlemlerin gerçekleşmesi için link üzerinden işlem yapar -->
+                                                    <th><button type="button" class="btn btn-danger"> <a style="text-decoration: none; color: white"> @Html.ActionLink("Delete", "Delete", new { id = @table["satis_id"] })</a>  </button>  </th>
+                                                    <th> <button type="button" class="btn btn-warning"> <a style="text-decoration: none; color: white"> @Html.ActionLink("Update", "Update", new { @id = @table["satis_id"] }) </a> </button>     </th>
+                                                </tr>
+
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+
+

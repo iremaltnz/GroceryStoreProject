@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Update</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Satis</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+    @foreach (System.Data.DataRow DR in ViewBag.emprecord.Rows)
+    {
+
+<form action="/Sale/Update" method="post">
+
+    <h3>
+        Satis Bilgilerini Girin
+
+    </h3>
+
+
+    <label>
+        <span>Kullanıcı Id :</span>
+        <input type="number" name="id" style="margin-top:50px" value="@DR["kullanici_id"]" />
+
+    </label>
+    <label>
+        <span>Miktar :</span>
+        <input type="number" name="quantity" style="margin-top:50px" value="@DR["si_miktar"]" />
+
+    </label>
+    <label>
+        <span>Satis Tarihi :</span>
+        <input type="date" name="date" style="margin-top:50px" value="@DR["s_tarih"]" />
+
+    </label>
+    <label>
+        <span>Durum :</span>
+        <input type="text" name="state" style="margin-top:50px" value="@DR["s_durum"]" />
+
+    </label>
+    <label>
+        <span>Fiyat :</span>
+        <input type="number" name="price" style="margin-top:50px" value="@DR["si_fiyat"]" />
+
+    </label>
+    <label>
+        <span>İskonto :</span>
+        <input type="number" name="discount" style="margin-top:50px" value="@DR["si_iskonto"]" />
+
+    </label>
+
+    <label>
+        <span>Urun Id :</span>
+        <input type="text" name="product_id" style="margin-top:50px" value="@DR["urun_id"]" />
+
+    </label>
+
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Update" class="btn btn-default" />
+    </div>
+
+
+</form>
+
+     
+    }
+
+
+</div>
+}

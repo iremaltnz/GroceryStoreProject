@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+            <div style="margin-top:50px ; margin-left:50px">
+                <div>
+                    <h2>Personel Rol Bilgileri</h2>
+                    <br />
+
+
+                    <button type="button" class="btn btn-success"> <a href="/Role/Add" style="text-decoration: none; color: white">Yeni Bir Rol Ekle</a> </button>
+                    <hr />
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td>Rol Id</td>
+                            <td>Rol Adı</td>
+                            <td>İşlemler</td>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                     
+                        @{ foreach (System.Data.DataRow table in ViewBag.table.Rows)
+                            {
+                                <tr>
+                                    <th>   <a style="margin-right:50px">  @table["rol_id"]</a> </th>
+                                    <th>      @table["r_adi"]</th>
+
+                                  
+                                    <th><button type="button" class="btn btn-danger"> <a style="text-decoration: none; color: white"> @Html.ActionLink("Delete", "Delete", new { id = @table["rol_id"] })</a>  </button>  </th>
+                                    <th> <button type="button" class="btn btn-warning"> <a style="text-decoration: none; color: white"> @Html.ActionLink("Update", "Update", new { @id = @table["rol_id"] }) </a> </button>     </th>
+                                </tr>
+
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+

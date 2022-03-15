@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+        <h1>Stok Bilgisi  Ekle</h1>
+        <form action="/Stock/Add" method="post">
+
+            <h3>
+                Stok Bilgilerini Girin
+
+            </h3>
+           
+            <label>
+                <span>Stok Adedi :</span>
+                <input type="number" name="s_quantity" style="margin-top:50px" />
+
+            </label>
+            <label>
+                <span>Giris Tarihi :</span>
+                <input type="date" name="entry_date" placeholder="" style="margin-top:50px" />
+            </label>
+            <label>
+                <span>Bitis Tarihi :</span>
+                <input type="date" name="end_date" placeholder="" style="margin-top:50px" />
+
+            </label>
+
+            <div class="button">
+                <input type="submit" value="Add" style="margin-top:50px ; margin-left:10px">
+            </div>
+
+          
+        </form>
+
+

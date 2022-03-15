@@ -1,0 +1,42 @@
+﻿@model Bakkal.Models.Brand
+
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Update</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Marka</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        @foreach (System.Data.DataRow DR in ViewBag.emprecord.Rows)
+        {
+            <form action="/Brand/Update" method="post">
+
+                <label>
+                    <span>Marka Adı :</span>
+                    <input type="text" name="m_name" style="margin-top:50px" value="@DR["m_adi"]" />
+                </label>
+            </form>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Update" class="btn btn-default" />
+                </div>
+
+            </div>
+        }
+
+
+    </div>
+}
+
+

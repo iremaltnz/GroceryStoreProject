@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="margin-top:50px ; margin-left:50px">
+
+    <h2>Stok Bilgileri</h2>
+    <br />
+
+
+    <button type="button" class="btn btn-success"> <a href="/Stock/Add" style="text-decoration: none; color: white">Yeni Bir Stok Ekle</a> </button>
+    <hr />
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <td>Stok Id</td>
+            <td>Stok Adedi</td>
+            <td>Giriş Tarihi</td>
+            <td>Bitiş Tarihi</td>
+
+        </tr>
+    </thead>
+    <tbody>
+        @{ foreach (System.Data.DataRow table in ViewBag.table.Rows)
+            {
+                <tr>
+                    <th>   <a style="margin-right:50px">  @table["stok_id"]</a> </th>
+                    <th>      @table["s_adedi"]</th>
+                    <th>      @table["s_giris_tarihi"]</th>
+                    <th>      @table["s_bitis_tarihi"]</th>
+
+                    <th><button type="button" class="btn btn-danger"> <a style="text-decoration: none; color: white"> @Html.ActionLink("Delete", "Delete", new { id = @table["stok_id"] })</a>  </button>  </th>
+                    <th> <button type="button" class="btn btn-warning"> <a style="text-decoration: none; color: white"> @Html.ActionLink("Update", "Update", new { @id = @table["stok_id"] }) </a> </button>     </th>
+                </tr>
+
+            }
+        }
+    </tbody>
+</table>
+
+
+            </div>
+
+
